@@ -2,6 +2,7 @@
 build/
 css/index.css
 lib/
+es/
 node_modules/
 release/
 npm-debug.log

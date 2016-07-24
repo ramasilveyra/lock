@@ -1,4 +1,16 @@
 {
+  "presets": ["react"],
   "plugins": ["version-inline", "transform-css-import-to-string"],
-  "presets": ["es2015-loose", "stage-0", "react"]
+  "env": {
+    "cjs": {
+      "presets": ["es2015-loose", "stage-0"],
+      "plugins": ["add-module-exports"]
+    },
+    "es": {
+      "presets": ["es2015-loose-native-modules", "stage-0"]
+    },
+    "production": {
+      "presets": ["es2015-loose", "stage-0"]
+    }
+  }
 }

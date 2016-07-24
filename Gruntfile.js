@@ -51,19 +51,6 @@ module.exports = function(grunt) {
         ]
       }
     },
-    babel: {
-      dist: {
-        files: [
-          {
-            expand: true,
-            cwd:    "src",
-            src:    ["**/*.js", "**/*.jsx"],
-            dest:   "lib",
-            ext: '.js'
-          }
-        ]
-      }
-    },
     browserify: {
       options: {
         browserifyOptions: {
@@ -183,7 +170,6 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask("build", ["clean:build", "env:build", "stylus:build", "browserify:build", "uglify:build"]);
-  grunt.registerTask("dist", ["clean:dist", "stylus:build", "babel:dist"]);
   grunt.registerTask("prepare_dev", ["clean:dev", "connect:dev", "stylus:build"]);
   grunt.registerTask("dev", ["prepare_dev", "browserify:dev", "watch"]);
   grunt.registerTask("design", ["prepare_dev", "browserify:design", "watch"]);
